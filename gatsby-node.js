@@ -4,8 +4,8 @@ const getStoryParams = require('./src/getStoryParams')
 const stringify = require('json-stringify-safe')
 
 exports.sourceNodes = async function({ actions }, options) {
-  const { createNode, setPluginStatus } = actions;
-  const client = new StoryblokClient(options, 'https://api.storyblok.com/v1');
+  const { createNode, setPluginStatus } = actions
+  const client = new StoryblokClient(options)
 
   Sync.init({
     createNode,
@@ -14,7 +14,7 @@ exports.sourceNodes = async function({ actions }, options) {
   })
 
   const space = await Sync.getSpace()
-  const languages = (options.languages ? options.languages : space.language_codes).map((lang) => { return lang + '/*' })
+  const languages = options.languages ? options.languages : space.language_codes
   languages.push('')
 
   for (const language of languages) {
