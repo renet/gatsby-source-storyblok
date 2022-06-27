@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-source-storyblok",
-  "version": "4.0.0",
+  "name": "gatsby-source-storyblok-parsed",
+  "version": "4.0.1",
   "description": "SDK to integrate Storyblok into your project using Gatsby.",
   "main": "./dist/gatsby-source-storyblok.js",
   "module": "./dist/gatsby-source-storyblok.mjs",
